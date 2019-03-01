@@ -51,6 +51,15 @@ inline int cntBitslong(ll x){ return __builtin_popcountll(x); }
 inline int gcdi(int a, int b) { while (b) { int t = a % b; a = b; b = t; } return a; }
 
 inline ll gcdll(ll a, ll b) { while (b) { ll t = a % b; a = b; b = t; } return a; }
+
+inline int nextint() { int x; scanf("%d", &x); return x; }
+inline long nextlong() { long x; scanf("%ld", &x); return x; }
+inline ll nextlong2() { ll x; scanf("%lld", &x); return x; }
+
+inline char *line(int size, int mode) { if (mode == 0){
+		char *str = new char[size];
+		scanf("%s", str); return str; }else if( mode == 1){ char *str = new char[size]; scanf("%s", str+1); return str; } }
+
 template<class T, class TT> void addfast(T &x, TT y) { x += y; if (x >= MOD) x -= MOD; }
 template<class T, class TT> void subfast(T &x, TT y) { x -= y; if (x < 0) x += MOD; }
 
@@ -89,18 +98,15 @@ ll bigpow(ll base, ll y, int mod = MOD){
 	if (y == 0) return base;
 	ll res = 1; while (y > 0){ if (y & 1) res = (res * base) % mod; base = (base * base) % mod; y >>= 1; } return (res) % mod;	}
 //#############################################################################################################################
-int sol(string str, int n){
-	
+
+void fastIO(){
+	ios_base::sync_with_stdio(false);
+	cin.tie(0);
 }
 
 int main(void){
-	ios_base::sync_with_stdio(false);cin.tie(0);
-	//##########################################
-	freopen("sol.in", "r", stdin);
-	//freopen("sol.out", "w", stdout);
-	//##########################################
-	setprecision(7);
-	cout << fixed;
+	fastIO();	
+
 	cerr << "Time Taken: " << 1.0 * clock() / CLOCKS_PER_SEC << endl;	
 	return 0;
 }
